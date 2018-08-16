@@ -23,7 +23,7 @@ export default {
             },
             {
                 test: /\.(scss|sass)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader','css-loader', 'sass-loader']
             }, {
                 test: /\.js$/,
                 exclude: /node_modules/,

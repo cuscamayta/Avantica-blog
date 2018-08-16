@@ -1,9 +1,9 @@
 /* eslint-disable */
-import React from 'react';
-import { render } from 'react-dom';
-import App from './app';
-import './style/main.scss';
-
-render(
-    <App name="developer" />, document.getElementById('app')
+import React from "react";
+import ReactDOM from "react-dom";
+import Main from "./Main";
+// import "./style";
+ 
+ReactDOM.render(
+  <Main/>, document.getElementById("app")
 );

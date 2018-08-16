@@ -6,20 +6,20 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 
 const app = express();
 
-app.use(webpackDevMiddleware(webpack(webpackConfig),{}));
+app.use(webpackDevMiddleware(webpack(webpackConfig), {}));
 app.use(webpackHotMiddleware(webpack(webpackConfig)));
 
-app.set('port',process.env.PORT || 3000)
+app.set('port', process.env.PORT || 3010)
 
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.send('hello world');
 })
 
-app.get('/api',(req,res)=>{
-    res.json({api:'works'})
+app.get('/api', (req, res) => {
+    res.json({ api: 'works' })
 })
 
-app.listen(app.get('port'),()=>{
+app.listen(app.get('port'), () => {
     console.log('server on port', app.get('port'));
 });
