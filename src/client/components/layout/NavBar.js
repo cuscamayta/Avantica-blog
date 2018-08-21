@@ -1,30 +1,22 @@
-/* eslint-disable */
 import React, { Component } from 'react';
-import { NavLink } from "react-router-dom";
 
 class NavBar extends Component {
     render() {
         return (
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <div class="container">
-                    <a class="navbar-brand" href="#">Code Behind ++</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="mainNav">
+                <div className="container">
+                    <a className="navbar-brand" href="/posts">NewTech Blog</a>
+                    <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        Menu
+                <i className="fa fa-bars"></i>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#/">Home<span class="sr-only">(current)</span>
-                                </a>
+                    <div className="collapse navbar-collapse" id="navbarResponsive">
+                        <ul className="navbar-nav ml-auto">
+                            <li className="nav-item">
+                                <a className="nav-link" href="#/posts">Posts</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#/stuff">Stuff</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#/contact">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#/">Services</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#/about">About</a>
                             </li>
                         </ul>
                     </div>

@@ -1,38 +1,32 @@
-/* eslint-disable */
 import React, { Component } from "react";
-import { Route, NavLink, HashRouter } from "react-router-dom";
-import Home from "./Home";
-import Stuff from "./Stuff";
-import Contact from "./Contact";
-import NavBar from './components/layout/NavBar';
-import Searcher from './components/layout/Search';
-import Categories from './components/layout/Categories';
+import {
+    Route,
+    HashRouter
+} from "react-router-dom";
+import Posts from "./components/Posts/Posts";
+import Admin from "./components/admin/Admin";
+import Post from "./components/Post/Post";
+import Contact from "./components/contact/Contact";
+import NavBar from "./components/layout/NavBar";
+import Footer from './components/layout/Footer';
+import './style/blog.scss';
+
 
 class Main extends Component {
     render() {
         return (
-            <HashRouter>
-                <div>
-                    <h1>Avantica Blog</h1>
-
-                    <NavBar></NavBar>
-                    <div className="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <Route exact path="/" component={Home} />
-                                <Route path="/stuff" component={Stuff} />
-                                <Route path="/contact" component={Contact} />
-                            </div>
-                            <div class="col-lg-4">
-                                <Searcher></Searcher>
-                                <Categories></Categories>
-                            </div>
-                        </div>
-
-
+            <div>
+                <NavBar></NavBar>
+                <HashRouter>
+                    <div className="content">
+                        <Route exact path="#/posts" component={Posts} />
+                        <Route path="#/posts/:post" component={Post} />
+                        <Route path="#/admin" component={Admin} />
+                        <Route path="#/contact" component={Contact} />
                     </div>
-                </div>
-            </HashRouter>
+                </HashRouter>
+                <Footer></Footer>
+            </div>
         );
     }
 }
