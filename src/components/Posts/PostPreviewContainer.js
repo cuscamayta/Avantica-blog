@@ -29,7 +29,7 @@ class PostPreviewContainer extends Component {
         return (
             <div className="col-lg-8">
                 {renderedUsers.map(item => (
-                    <PostPreview key={item.id + item.userId} post={item}></PostPreview>
+                    <PostPreview key={item.id} post={item}></PostPreview>
                 ))}
                 <Pagination
                     margin={2}

@@ -4,7 +4,6 @@ import {
     HashRouter
 } from "react-router-dom";
 import Posts from "./components/Posts/Posts";
-import Admin from "./components/admin/Admin";
 import Post from "./components/Post/Post";
 import Contact from "./components/contact/Contact";
 import NavBar from "./components/layout/NavBar";
@@ -19,10 +18,10 @@ class Main extends Component {
                 <NavBar></NavBar>
                 <HashRouter>
                     <div className="content">
-                        <Route exact path="#/posts" component={Posts} />
-                        <Route path="#/posts/:post" component={Post} />
-                        <Route path="#/admin" component={Admin} />
-                        <Route path="#/contact" component={Contact} />
+                        <Route exact path="/posts" component={Posts} />
+                        <Route exact path="/" component={Posts} />
+                        <Route path="/posts/:post" component={Post} />
+                        <Route path="/about" component={Contact} />
                     </div>
                 </HashRouter>
                 <Footer></Footer>
@@ -32,3 +31,4 @@ class Main extends Component {
 }
 
 export default Main;
+

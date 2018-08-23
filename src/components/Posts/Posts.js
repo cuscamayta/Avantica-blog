@@ -18,7 +18,7 @@ class Posts extends Component {
         };
     }
     componentDidMount() {
-        postApi.requestPost(Math.ceil(Math.random() * 10)).then(data => {
+        postApi.requestPost().then(data => {
             this.setState({ postContent: data });
         });
     }

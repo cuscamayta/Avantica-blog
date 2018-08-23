@@ -11,10 +11,10 @@ class PostPreview extends Component {
                         {this.props.post.title}
                     </h2>
                     <h3 className="post-subtitle">
-                        {this.props.post.title}
+                        {this.props.post.summary}
                     </h3>
                 </a>
-              <PostInfo></PostInfo>
+              <PostInfo postinfo={this.props.post}></PostInfo>
             </div>
         )
     }
