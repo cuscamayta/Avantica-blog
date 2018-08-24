@@ -16,12 +16,18 @@ class Posts extends Component {
                 posts: []
             }
         };
+        this.handlerSelected = this.handlerSelected.bind(this);
     }
     componentDidMount() {
         postApi.requestPost().then(data => {
             this.setState({ postContent: data });
         });
     }
+
+    handlerSelected(event,ui){
+        alert('clikc');
+    }
+ 
     render() {
         return (
             <div>
@@ -31,7 +37,7 @@ class Posts extends Component {
                     <div className="row">
                         <PostPreviewContainer posts={this.state.postContent.posts}></PostPreviewContainer>
                         <div className="col-lg-4">
-                            <Searcher></Searcher>
+                            <Searcher onSelectCategory={this.handlerSelected}></Searcher>
                             <Categories></Categories>
                             <Widget></Widget>
                         </div>
