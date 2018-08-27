@@ -14,8 +14,8 @@ class PostPreviewContainer extends Component {
         this.handlePageChange = this.handlePageChange.bind(this);
     }
 
-    handlePageChange(page) {
-        const renderedUsers = this.props.posts.slice((page - 1) * 2, (page - 1) * 2 + 5);
+    handlePageChange(page, listFiltered) {
+        const renderedUsers = listFiltered.slice((page - 1) * 2, (page - 1) * 2 + 5);
         this.setState({ page, renderedUsers });
     }
 
@@ -25,25 +25,21 @@ class PostPreviewContainer extends Component {
         }, 1000)
     }
 
-    // filterPosts() {
-    //     var updatedList = this.state.initialItems;
-    //     updatedList = updatedList.filter(function (item) {
-    //         return item.toLowerCase().search(
-    //             event.target.value.toLowerCase()) !== -1;
-    //     });
-    //     this.setState({ items: updatedList });
-    // }
     updateSearch(event) {
         this.setState({ search: event.target.value.substr(0, 20) });
     }
 
     render() {
-        const { page, total, renderedUsers } = this.state;
-        let filterPosts = renderedUsers.filter(
+        let { page, total, renderedUsers } = this.state;
+        let filterPosts = this.props.posts.filter(
             (post) => {
                 return post.title.toLowerCase().indexOf(this.state.search) !== -1;
             }
         );
+
+        renderedUsers = filterPosts.slice((page - 1) * 2, (page - 1) * 2 + 5);
+        total = filterPosts.length;
+
         return (
             <div className="col-lg-8">
                 <form action="" class="search-form">
@@ -54,14 +50,14 @@ class PostPreviewContainer extends Component {
                     </div>
                 </form>
 
-                {filterPosts.map(item => (
+                {renderedUsers.map(item => (
                     <PostPreview key={item.id} post={item}></PostPreview>
                 ))}
                 <Pagination
                     margin={2}
                     page={page}
                     count={Math.ceil(total / 5)}
-                    onPageChange={this.filterPosts}
+                    onPageChange={(page) => this.handlePageChange(page, filterPosts)}
                 />
             </div>
         )
