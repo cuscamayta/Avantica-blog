@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../layout/Header';
-import NavBar from '../layout/NavBar';
+import NavBar from '../layout/NavBar/NavBar';
 import postApi from './PostIDApi';
 import CommentContainer from './CommentContainer';
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavBar from '../layout/NavBar';
+import NavBar from '../layout/NavBar/NavBar';
 import Header from '../layout/Header';
 import postApi from "./PostApi";
 import PostPreviewContainer from "./PostPreviewContainer";

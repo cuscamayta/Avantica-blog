@@ -34,13 +34,16 @@ const config = {
 			},
 			{
 				test: /\.(scss|sass)$/,
-				use: ['style-loader','css-loader', 'sass-loader']
+				use: ['style-loader', 'css-loader', 'sass-loader']
 			}, {
 				test: /\.js$/,
 				exclude: /node_modules/,
-				use: ['babel-loader']
+				use: ['babel-loader', 'eslint-loader']
 			}
 		]
+	},
+	devServer: {
+		port: 9000
 	},
 	resolve: {
 		extensions: ['.js', '.jsx']

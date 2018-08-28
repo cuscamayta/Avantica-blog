@@ -1,11 +1,11 @@
 import React from 'react';
-import Category from './Categories';
+import NavBar from './NavBar';
 import renderer from 'react-test-renderer';
 
-describe('categories', () => {
-  it('renders category component correctly', () => {
+describe('navbar', () => {
+  it('renders navbar component correctly', () => {
     const tree = renderer.create(
-      <Category />
+      <NavBar />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

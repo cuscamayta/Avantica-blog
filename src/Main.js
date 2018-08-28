@@ -6,7 +6,7 @@ import {
 import Posts from "./components/Posts/Posts";
 import Post from "./components/Post/Post";
 import Contact from "./components/contact/Contact";
-import NavBar from "./components/layout/NavBar";
+import NavBar from "./components/layout/NavBar/NavBar";
 import Footer from './components/layout/Footer';
 import './style/blog.scss';
 
