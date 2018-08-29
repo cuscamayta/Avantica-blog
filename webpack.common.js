@@ -2,24 +2,24 @@
 	./webpack.common.js
 */
 
-const path = require('path'); // path utility
+const path = require('path'); 
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-// init HTML Webpack Plugin
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-	template: './src/index.html', // archivo de nuestra vista
-	inject: 'body' // donde insertaremos nuestro script
+	template: './src/index.html', 
+	inject: 'body' 
 })
-// init Clean Webpack Plugin
+
 const CleanWebpackPluginConfig = new CleanWebpackPlugin(['public']);
 
 const config = {
-	entry: './src/index.js', // archivo js que codearemos
+	entry: './src/index.js', 
 	output: {
-		path: path.resolve('./public'), //resolver el path de salida
-		filename: 'bundle.js' // archivo js compilado
+		path: path.resolve('./public'), 
+		filename: 'bundle.js' 
 	},
 	module: {
 		rules: [
@@ -29,8 +29,8 @@ const config = {
 				exclude: /node_modules/
 			},
 			{
-				use: ['style-loader', 'css-loader'],
-				test: /\.css$/
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader']
 			},
 			{
 				test: /\.(scss|sass)$/,
@@ -48,7 +48,7 @@ const config = {
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
-	plugins: [HtmlWebpackPluginConfig, CleanWebpackPluginConfig] // configuración de nuestra vista
+	plugins: [HtmlWebpackPluginConfig, CleanWebpackPluginConfig] 
 }
 
-module.exports = config; //exportamos a webpack nuestra configuración
+module.exports = config; 

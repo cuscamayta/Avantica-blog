@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ES6 practice</title>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
+
+<script>
+
+    //templates
+    const a = 'b';
+
+    var another = `this is a ${a}`
+
+    console.log(another);
+
+    //default parameters
+
+    function sum(a, b = 9) {
+        console.log(a + b);
+    }
+
+    sum(1);
+
+    //ARROR FUNTIONS
+    const sumArrow = (a, b = 20) => { console.log(a + b) }
+    sumArrow(5);
+
+    //MAP
+    var numbers = [1, 5, 10, 15];
+    var doubles = numbers.map(function (x) {
+        return x * 2;
+    });
+
+    //REDUCE
+    [0, 1, 2, 3, 4].reduce(function (valorAnterior, valorActual, indice, vector) {
+        return valorAnterior + valorActual;
+    });
+
+    //EVERY
+    function isTrue(currentValue) {
+        return currentValue < 40;
+    }
+
+    var array1 = [1, 30, 39, 29, 10, 13];
+
+    console.log(array1.every(isTrue));
+    //SPREAD
+    var parts = ['shoulder', 'knees'];
+    var lyrics = ['head', ...parts, 'and', 'toes'];
+
+    //REST PARAMETERS
+    function doMath(operator, ...numbers) {
+        console.log(operator);
+        console.log(numbers);
+    }
+
+    doMath('add', 1, 2, 3);
+
+    //SHORHAND METHODS
+    const lib = {
+        sum(a, b) { return a + b; },
+        mult(a, b) { return a * b; }
+    };
+
+    //DINAMICALLY PROPERTY KEY
+    const
+        key1 = 'one',
+        obj = {
+            [key1]: 1,
+            two: 2,
+            three: 3
+        };
+
+    //DESTRUCTURING
+
+    const myObject = {
+        one: 'a',
+        two: 'b',
+        three: 'c'
+    };
+
+    const { one, two, three } = myObject;
+
+    //FUNCTION PARAMETERS
+    
+
+</script>

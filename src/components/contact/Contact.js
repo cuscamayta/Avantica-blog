@@ -14,7 +14,7 @@ class Contact extends Component {
                                 <img class="profile" src="https://blog.couchbase.com/wp-content/original-assets/2017/january/bluebird-promises-swagger-nodejs/swagger-logo.png?h=350&auto=compress&cs=tinysrgb" alt="" />
 
                                 <div class="title">
-                                    <h3>Systems</h3>
+                                    <h3>Systems 2018</h3>
                                 </div>
 
                                 <div class="text">
